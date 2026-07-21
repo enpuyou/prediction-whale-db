@@ -1,0 +1,31 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "LATEST=$(ls -lt docs/handoffs/*.md 2>/dev/null | awk 'NR==1{print $NF}'); if [ -n \"$LATEST\" ]; then echo \"[session-context] Latest handoff: $LATEST\"; fi"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git init*)",
+      "Bash(ls*)",
+      "Bash(find . -*)",
+      "Bash(uv*)",
+      "Bash(poetry run pytest*)",
+      "Bash(poetry run ruff*)",
+      "Bash(poetry check*)",
+      "Bash(python3 *)",
+      "Bash(make*)"
+    ]
+  }
+}
