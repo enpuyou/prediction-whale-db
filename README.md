@@ -32,3 +32,7 @@ uv run ruff check src tests
 ```bash
 uv run prediction-whale-db status
 ```
+
+## Databrick
+
+WIP
